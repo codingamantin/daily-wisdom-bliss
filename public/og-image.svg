@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 80) rotate(37) scale(1000 860)">
+      <stop offset="0" stop-color="#D9E3D5" />
+      <stop offset="0.55" stop-color="#C9D5C4" />
+      <stop offset="1" stop-color="#AEBDA8" />
+    </radialGradient>
+    <radialGradient id="orbGold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(890 180) rotate(90) scale(220 280)">
+      <stop stop-color="#E0C15D" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#E0C15D" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="orbSage" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160 540) rotate(90) scale(180 260)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.36" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F1D47C" />
+      <stop offset="1" stop-color="#B88B17" />
+    </linearGradient>
+    <linearGradient id="cardFront" x1="220" y1="120" x2="520" y2="540">
+      <stop offset="0" stop-color="#FBF7EA" />
+      <stop offset="1" stop-color="#EEE3BC" />
+    </linearGradient>
+    <filter id="shadow" x="96" y="84" width="420" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="22"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.101961 0 0 0 0 0.101961 0 0 0 0 0.101961 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orbGold)"/>
+  <rect width="1200" height="630" fill="url(#orbSage)"/>
+
+  <g opacity="0.22">
+    <path d="M78 70H210" stroke="#1A1A1A" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M992 540H1124" stroke="#1A1A1A" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="944" cy="112" r="84" stroke="#D4AF37" stroke-opacity="0.22"/>
+    <circle cx="944" cy="112" r="58" stroke="#D4AF37" stroke-opacity="0.16"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="140" y="120" width="332" height="452" rx="34" fill="url(#cardFront)"/>
+    <rect x="154" y="134" width="304" height="424" rx="26" stroke="#D4AF37" stroke-opacity="0.48"/>
+    <rect x="164" y="144" width="284" height="404" rx="22" stroke="#D4AF37" stroke-opacity="0.2"/>
+
+    <text x="184" y="182" fill="#786322" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="4.2">01 / 58</text>
+    <text x="356" y="182" fill="#786322" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="3.3">✦ MANIFESTIM</text>
+
+    <g transform="translate(306 278)">
+      <path d="M-96 0H-36" stroke="#8E7425" stroke-width="1.4"/>
+      <path d="M36 0H96" stroke="#8E7425" stroke-width="1.4"/>
+      <circle cx="0" cy="0" r="7.2" stroke="#8E7425" stroke-width="1.4" fill="none"/>
+      <circle cx="-18" cy="0" r="2.3" fill="#8E7425"/>
+      <circle cx="18" cy="0" r="2.3" fill="#8E7425"/>
+    </g>
+
+    <text x="306" y="332" text-anchor="middle" fill="#1A1A1A" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="42" font-weight="600">KARTA E DITËS</text>
+    <text x="306" y="382" text-anchor="middle" fill="#4A4332" font-family="'Inter Tight', 'Inter', sans-serif" font-size="22">Një ritual i qetë për t'u kthyer tek vetja</text>
+
+    <rect x="250" y="422" width="112" height="1.5" fill="#9C8140" fill-opacity="0.6"/>
+
+    <text x="306" y="472" text-anchor="middle" fill="#786322" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="28" font-style="italic">~ mesazhi i sotëm ~</text>
+  </g>
+
+  <g transform="translate(640 146)">
+    <text x="0" y="0" fill="#786322" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="6.3">MANIFESTIM</text>
+    <text x="0" y="118" fill="#1A1A1A" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="92" font-weight="600">Karta e Ditës</text>
+    <text x="0" y="182" fill="#38342B" font-family="'Inter Tight', 'Inter', sans-serif" font-size="31">Rituali ditor i manifestimit me një kartë të bukur,</text>
+    <text x="0" y="222" fill="#38342B" font-family="'Inter Tight', 'Inter', sans-serif" font-size="31">një moment qetësie dhe një mesazh për ditën tënde.</text>
+
+    <g transform="translate(0 318)">
+      <rect width="320" height="74" rx="37" fill="#1A1A1A"/>
+      <text x="160" y="46" text-anchor="middle" fill="#F7F3E8" font-family="'Inter Tight', 'Inter', sans-serif" font-size="28">Hap kartën e sotme</text>
+    </g>
+
+    <g transform="translate(0 460)">
+      <path d="M0 0H94" stroke="#8E7425" stroke-width="1.4"/>
+      <path d="M146 0H240" stroke="#8E7425" stroke-width="1.4"/>
+      <circle cx="120" cy="0" r="8.2" stroke="#8E7425" stroke-width="1.4" fill="none"/>
+      <circle cx="98" cy="0" r="2.6" fill="#8E7425"/>
+      <circle cx="142" cy="0" r="2.6" fill="#8E7425"/>
+    </g>
+  </g>
+
+  <g transform="translate(934 92)">
+    <path d="M56 0L65.45 29.55L95 39L65.45 48.45L56 78L46.55 48.45L17 39L46.55 29.55L56 0Z" fill="url(#gold)"/>
+  </g>
+</svg>

@@ -40,7 +40,8 @@ const Index = () => {
       if (c) {
         setCard(c);
         setDrawnToday(true);
-        setFlipped(true);
+        // Keep face-down so the user reveals it again each new session/day
+        setFlipped(false);
       }
     } else if (viewed.length >= TOTAL_CARDS) {
       setDeckComplete(true);

@@ -103,16 +103,14 @@ const ManifestationCardView = ({ card, flipped, onFlip, canFlip }: Props) => {
         type="button"
         onClick={() => canFlip && onFlip()}
         disabled={!canFlip}
-        whileHover={canFlip && !flipped ? { y: -6, rotateZ: -1 } : {}}
+        whileHover={canFlip && !flipped ? { y: -6 } : {}}
         whileTap={canFlip && !flipped ? { scale: 0.98 } : {}}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         className={`relative aspect-[5/8] w-[88vw] max-w-[360px] sm:max-w-[400px] md:max-w-[440px] preserve-3d rounded-[28px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
           canFlip && !flipped ? "cursor-pointer animate-float-slow" : "cursor-default"
         }`}
-        style={{
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          transition: "transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
-        }}
+        style={{ transformStyle: "preserve-3d" }}
         aria-label={flipped ? "Karta e ditës" : "Hapni kartën e ditës"}
       >
         <CardBack />

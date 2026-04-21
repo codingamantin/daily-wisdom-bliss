@@ -1,4 +1,5 @@
 import { CARDS, ManifestationCard } from "@/data/cards";
+import { uiContent } from "@/data/ui-content";
 
 const KEYS = {
   user: "mc.userName",
@@ -6,6 +7,20 @@ const KEYS = {
   today: "mc.todayDraw", // { date: "YYYY-MM-DD", id: number }
   theme: "mc.theme",
 };
+
+const THEME_COLORS = {
+  light: "#C9D5C4",
+  dark: "#141414",
+} as const;
+
+function syncThemeDocument(theme: "light" | "dark") {
+  document.documentElement.classList.toggle("dark", theme === "dark");
+
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute("content", THEME_COLORS[theme]);
+  }
+}
 
 export type TodayDraw = { date: string; id: number };
 
@@ -68,7 +83,15 @@ export const TOTAL_CARDS = CARDS.length;
 
 export function greeting(name?: string | null): string {
   const h = new Date().getHours();
-  const base = h < 5 ? "Natë e qetë" : h < 12 ? "Mirëmëngjes" : h < 18 ? "Mirëdita" : "Mirëmbrëma";
+  const base =
+    h < 5
+      ? uiContent.greetings.night
+      : h < 12
+        ? uiContent.greetings.morning
+        : h < 18
+          ? uiContent.greetings.afternoon
+          : uiContent.greetings.evening;
+
   return name ? `${base}, ${name}` : base;
 }
 
@@ -77,5 +100,9 @@ export function getTheme(): "light" | "dark" {
 }
 export function setTheme(t: "light" | "dark") {
   localStorage.setItem(KEYS.theme, t);
-  document.documentElement.classList.toggle("dark", t === "dark");
+  syncThemeDocument(t);
+}
+
+export function applySavedTheme() {
+  syncThemeDocument(getTheme());
 }

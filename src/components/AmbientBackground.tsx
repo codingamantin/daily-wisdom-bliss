@@ -1,6 +1,8 @@
 const AmbientBackground = () => {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-gradient-sage" />
       <div
         className="ambient-orb animate-orb-drift"
         style={{

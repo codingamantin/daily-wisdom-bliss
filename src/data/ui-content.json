@@ -1,0 +1,39 @@
+{
+  "header": {
+    "brand": "Manifestim",
+    "title": "Karta e Ditës",
+    "toggleThemeLabel": "Ndrysho temën"
+  },
+  "greetings": {
+    "night": "Natë e qetë",
+    "morning": "Mirëmëngjes",
+    "afternoon": "Mirëdita",
+    "evening": "Mirëmbrëma"
+  },
+  "index": {
+    "introLabel": "Rituali i sotëm",
+    "introTitle": "Hap kartën që zemra ta dëshiron sot",
+    "introBody": "Merr një frymëmarrje të ngadaltë. Kur të jesh gati, prek kartën.",
+    "completeLabel": "Cikël i përfunduar",
+    "completeTitle": "Të gjitha kartat janë hapur",
+    "completeBody": "Ke përfunduar një udhëtim të plotë. Kur të jesh gati, fillo një cikël të ri.",
+    "reset": "Rifillo kartat",
+    "openToday": "Hap kartën e sotme",
+    "openedLabel": "Karta e sotme është hapur",
+    "openedBody": "Kthehu nesër për një mesazh të ri.",
+    "progress": "Progresi"
+  },
+  "onboarding": {
+    "label": "Rituali ditor",
+    "title": "Mirë se vini",
+    "body": "Përpara se të hapni kartën e parë, na thoni si t'ju thërrasim.",
+    "nameLabel": "Emri juaj",
+    "namePlaceholder": "p.sh. Ana",
+    "submit": "Filloni rrugëtimin"
+  },
+  "notFound": {
+    "title": "404",
+    "body": "Oops! Page not found",
+    "backHome": "Return to Home"
+  }
+}

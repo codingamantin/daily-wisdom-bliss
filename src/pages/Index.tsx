@@ -4,6 +4,7 @@ import AmbientBackground from "@/components/AmbientBackground";
 import OnboardingModal from "@/components/OnboardingModal";
 import ManifestationCardView from "@/components/ManifestationCard";
 import Header from "@/components/Header";
+import { uiContent } from "@/data/ui-content";
 import {
   TOTAL_CARDS,
   drawNextCard,
@@ -90,16 +91,17 @@ const Index = () => {
   const showOnboarding = ready && !userName;
 
   return (
-    <main className="relative min-h-screen flex flex-col font-sans-premium text-foreground overflow-x-hidden">
+    <main className="relative isolate min-h-screen overflow-x-hidden bg-background font-sans-premium text-foreground">
       <AmbientBackground />
 
-      <Header greeting={greeting(userName)} date={dateLabel} />
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <Header greeting={greeting(userName)} date={dateLabel} />
 
-      <section className="flex-1 flex flex-col items-center justify-center px-5 py-10 sm:py-14">
+        <section className="flex-1 flex flex-col items-center justify-center px-5 py-10 sm:py-14">
         {/* mobile greeting */}
         <div className="sm:hidden text-center mb-6">
-          <p className="font-display text-xl text-foreground">{greeting(userName)}</p>
-          <p className="font-mono-premium text-[10px] uppercase tracking-[0.25em] text-foreground/55 mt-1">
+          <p className="font-display text-2xl text-foreground">{greeting(userName)}</p>
+          <p className="font-mono-premium text-[11px] uppercase tracking-[0.25em] text-foreground/55 mt-1.5">
             {dateLabel}
           </p>
         </div>
@@ -115,14 +117,14 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="text-center max-w-md mb-8 sm:mb-10"
             >
-              <p className="font-mono-premium text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-accent-deep mb-3">
-                Rituali i sotëm
+              <p className="font-mono-premium text-[11px] sm:text-xs uppercase tracking-[0.35em] text-accent-deep mb-3">
+                {uiContent.index.introLabel}
               </p>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground">
-                Hap kartën që zemra të dëshiron sot
+                {uiContent.index.introTitle}
               </h1>
-              <p className="text-sm sm:text-base text-foreground/65 mt-3 sm:mt-4 max-w-sm mx-auto">
-                Merr një frymëmarrje të ngadaltë. Kur të jesh gati, prek kartën.
+              <p className="text-[15px] sm:text-lg text-foreground/65 mt-3 sm:mt-4 max-w-sm mx-auto">
+                {uiContent.index.introBody}
               </p>
             </motion.div>
           )}
@@ -139,18 +141,18 @@ const Index = () => {
             <div className="mx-auto mb-5 h-14 w-14 rounded-full gold-border flex items-center justify-center">
               <span className="text-gold text-xl">✦</span>
             </div>
-            <p className="font-mono-premium text-[10px] uppercase tracking-[0.35em] text-accent-deep">
-              Cikël i përfunduar
+            <p className="font-mono-premium text-[11px] sm:text-xs uppercase tracking-[0.35em] text-accent-deep">
+              {uiContent.index.completeLabel}
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl mt-3">Të gjitha 58 kartat janë hapur</h2>
-            <p className="text-sm sm:text-base text-foreground/70 mt-4 max-w-sm mx-auto">
-              Ke përfunduar një udhëtim të plotë. Kur të jesh gati, fillo një cikël të ri.
+            <h2 className="font-display text-3xl sm:text-4xl mt-3">{uiContent.index.completeTitle}</h2>
+            <p className="text-[15px] sm:text-lg text-foreground/70 mt-4 max-w-sm mx-auto">
+              {uiContent.index.completeBody}
             </p>
             <button
               onClick={handleReset}
-              className="mt-8 rounded-full bg-foreground text-background px-8 py-3.5 text-sm tracking-wide hover:bg-foreground/90 transition-all shadow-soft"
+              className="mt-8 rounded-full bg-foreground text-background px-8 py-3.5 text-[15px] tracking-wide hover:bg-foreground/90 transition-all shadow-soft"
             >
-              Rifillo kartat
+              {uiContent.index.reset}
             </button>
           </motion.div>
         ) : (
@@ -172,9 +174,9 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 onClick={handleFlip}
-                className="rounded-full bg-foreground text-background px-8 sm:px-10 py-3.5 text-sm tracking-wide hover:bg-foreground/90 transition-all shadow-soft"
+                className="rounded-full bg-foreground text-background px-8 sm:px-10 py-3.5 text-[15px] sm:text-base tracking-wide hover:bg-foreground/90 transition-all shadow-soft"
               >
-                Hap kartën e sotme
+                {uiContent.index.openToday}
               </motion.button>
             )}
 
@@ -186,45 +188,47 @@ const Index = () => {
                 transition={{ delay: 0.9, duration: 0.6 }}
                 className="flex flex-col items-center"
               >
-                <p className="font-mono-premium text-[10px] uppercase tracking-[0.35em] text-accent-deep">
-                  Karta e sotme është hapur
+                <p className="font-mono-premium text-[11px] sm:text-xs uppercase tracking-[0.35em] text-accent-deep">
+                  {uiContent.index.openedLabel}
                 </p>
-                <p className="font-display italic text-foreground/70 mt-2 text-base sm:text-lg max-w-xs">
-                  Kthehu nesër për një mesazh të ri.
+                <p className="font-display italic text-foreground/70 mt-2 text-lg sm:text-xl max-w-xs">
+                  {uiContent.index.openedBody}
                 </p>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-      </section>
+        </section>
 
-      {/* Footer / progress */}
-      <footer className="w-full px-5 sm:px-8 pb-6 sm:pb-8">
-        <div className="max-w-md mx-auto">
-          <div className="flex items-center justify-between font-mono-premium text-[10px] uppercase tracking-[0.3em] text-foreground/55 mb-2">
-            <span>Progresi</span>
-            <span>{viewedCount} / {TOTAL_CARDS}</span>
+        {/* Footer / progress */}
+        <footer className="w-full px-5 sm:px-8 pb-6 sm:pb-8">
+          <div className="max-w-md mx-auto">
+            <div className="flex items-center justify-between font-mono-premium text-[11px] sm:text-xs uppercase tracking-[0.3em] text-foreground/55 mb-2">
+              <span>{uiContent.index.progress}</span>
+              <span>{viewedCount} / {TOTAL_CARDS}</span>
+            </div>
+            <div className="h-[3px] w-full rounded-full bg-foreground/10 overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${(viewedCount / TOTAL_CARDS) * 100}%` }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="h-full bg-gradient-gold"
+              />
+            </div>
+            {viewedCount > 0 && !deckComplete && (
+              <button
+                onClick={handleReset}
+                className="mt-4 mx-auto block font-mono-premium text-[11px] sm:text-xs uppercase tracking-[0.3em] text-foreground/45 hover:text-foreground/80 transition-colors"
+              >
+                {uiContent.index.reset}
+              </button>
+            )}
           </div>
-          <div className="h-[3px] w-full rounded-full bg-foreground/10 overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${(viewedCount / TOTAL_CARDS) * 100}%` }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="h-full bg-gradient-gold"
-            />
-          </div>
-          {viewedCount > 0 && !deckComplete && (
-            <button
-              onClick={handleReset}
-              className="mt-4 mx-auto block font-mono-premium text-[10px] uppercase tracking-[0.3em] text-foreground/45 hover:text-foreground/80 transition-colors"
-            >
-              Rifillo kartat
-            </button>
-          )}
-        </div>
-      </footer>
+        </footer>
 
-      <OnboardingModal open={showOnboarding} onSubmit={handleOnboard} />
+        <OnboardingModal open={showOnboarding} onSubmit={handleOnboard} />
+      </div>
+
     </main>
   );
 };

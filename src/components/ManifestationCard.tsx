@@ -20,13 +20,21 @@ const Ornament = () => (
 );
 
 const CardBack = () => (
-  <div className="absolute inset-0 backface-hidden rounded-[28px] bg-gradient-card-back overflow-hidden shadow-card">
+  <div
+    className="absolute inset-0 backface-hidden rounded-[28px] bg-gradient-card-back overflow-hidden shadow-card"
+    style={{
+      transform: "rotateY(0deg) translateZ(1px)",
+      transformStyle: "preserve-3d",
+      WebkitTransformStyle: "preserve-3d",
+      WebkitBackfaceVisibility: "hidden",
+    }}
+  >
     {/* gold border frame */}
     <div className="absolute inset-3 rounded-[22px] border border-accent/40" />
     <div className="absolute inset-4 rounded-[20px] border border-accent/15" />
 
     {/* center emblem */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-accent">
+    <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center text-accent">
       <div className="relative h-32 w-32 sm:h-40 sm:w-40 flex items-center justify-center">
         <div className="absolute inset-0 rounded-full border border-accent/40" />
         <div className="absolute inset-3 rounded-full border border-accent/25" />
@@ -56,7 +64,12 @@ const CardBack = () => (
 const CardFront = ({ card }: { card: Card | null }) => (
   <div
     className="absolute inset-0 backface-hidden rounded-[28px] bg-gradient-card-front shadow-card overflow-hidden"
-    style={{ transform: "rotateY(180deg)" }}
+    style={{
+      transform: "rotateY(180deg) translateZ(1px)",
+      transformStyle: "preserve-3d",
+      WebkitTransformStyle: "preserve-3d",
+      WebkitBackfaceVisibility: "hidden",
+    }}
   >
     {/* gold inner frame */}
     <div className="absolute inset-3 rounded-[22px] border border-accent/35" />
@@ -110,7 +123,7 @@ const ManifestationCardView = ({ card, flipped, onFlip, canFlip }: Props) => {
         className={`relative aspect-[5/8] w-[88vw] max-w-[360px] sm:max-w-[400px] md:max-w-[440px] preserve-3d rounded-[28px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
           canFlip && !flipped ? "cursor-pointer animate-float-slow" : "cursor-default"
         }`}
-        style={{ transformStyle: "preserve-3d" }}
+        style={{ transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d", willChange: "transform" }}
         aria-label={flipped ? "Karta e ditës" : "Hapni kartën e ditës"}
       >
         <CardBack />

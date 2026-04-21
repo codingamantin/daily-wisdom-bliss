@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { uiContent } from "@/data/ui-content";
 
 type Props = {
   open: boolean;
@@ -38,36 +39,36 @@ const OnboardingModal = ({ open, onSubmit }: Props) => {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full gold-border">
                 <span className="text-gold font-display text-xl">✦</span>
               </div>
-              <p className="font-mono-premium text-[11px] uppercase tracking-[0.3em] text-foreground/60">
-                Rituali ditor
+              <p className="font-mono-premium text-xs uppercase tracking-[0.3em] text-foreground/60">
+                {uiContent.onboarding.label}
               </p>
               <h2 className="font-display mt-3 text-3xl sm:text-4xl text-foreground">
-                Mirë se vini
+                {uiContent.onboarding.title}
               </h2>
-              <p className="font-sans-premium mt-3 text-sm sm:text-base text-foreground/70 max-w-xs">
-                Përpara se të hapni kartën e parë, na thoni si t'ju thërrasim.
+              <p className="font-sans-premium mt-3 text-[15px] sm:text-lg text-foreground/70 max-w-xs">
+                {uiContent.onboarding.body}
               </p>
             </div>
 
             <div className="mt-8">
-              <label className="font-mono-premium block text-[10px] uppercase tracking-[0.25em] text-foreground/60 mb-2">
-                Emri juaj
+              <label className="font-mono-premium block text-[11px] uppercase tracking-[0.25em] text-foreground/60 mb-2">
+                {uiContent.onboarding.nameLabel}
               </label>
               <input
                 autoFocus
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="p.sh. Ana"
-                className="w-full bg-transparent border-b border-foreground/30 focus:border-accent outline-none py-3 font-display text-2xl text-foreground placeholder:text-foreground/30 transition-colors"
+                placeholder={uiContent.onboarding.namePlaceholder}
+                className="w-full bg-transparent border-b border-foreground/30 focus:border-accent outline-none py-3 font-display text-[28px] sm:text-3xl text-foreground placeholder:text-foreground/30 transition-colors"
               />
             </div>
 
             <button
               type="submit"
               disabled={!name.trim()}
-              className="mt-8 w-full rounded-full bg-foreground text-background py-4 font-sans-premium text-sm tracking-wide hover:bg-foreground/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-soft"
+              className="mt-8 w-full rounded-full bg-foreground text-background py-4 font-sans-premium text-[15px] sm:text-base tracking-wide hover:bg-foreground/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-soft"
             >
-              Filloni rrugëtimin
+              {uiContent.onboarding.submit}
             </button>
           </motion.form>
         </motion.div>
